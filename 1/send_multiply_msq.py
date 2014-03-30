@@ -14,7 +14,7 @@ channel = connection.channel()
 channel.queue_declare(queue='sms')
 
 
-for i in xrange(10000):
+for i in xrange(20):
     # send message to sms queue
     channel.basic_publish(exchange='',
                           routing_key='sms',
