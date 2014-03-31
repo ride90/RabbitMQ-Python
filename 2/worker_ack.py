@@ -10,6 +10,7 @@ def callback(channel, method, properties, body):
     print " [x] Received {0}".format(body)
     time.sleep(body.count('second'))
     print " [x] Done"
+    channel.basic_ack(delivery_tag=method.delivery_tag)
 
 params = pika.ConnectionParameters('localhost')
 connection = pika.BlockingConnection(parameters=params)
@@ -22,8 +23,7 @@ channel.queue_declare(queue='sms')
 
 
 channel.basic_consume(callback,
-                      queue='sms',
-                      no_ack=False)
+                      queue='sms')
 
 print ' [*] Waiting for messages. To exit press CTRL+C'
 channel.start_consuming()
