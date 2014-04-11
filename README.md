@@ -5,10 +5,13 @@ Demos with python
 
     Prepare for work:
     1) Install RabbitMQ server:
-    apt-get install rabbitmq-server
+    sudo apt-get install rabbitmq-server
 
     2) Install RabbitMQ management console:
-    # rabbitmq-plugins enable rabbitmq_management
+    rabbitmq-plugins enable rabbitmq_management
+    or
+    sudo /usr/lib/rabbitmq/lib/rabbitmq_server-*.*.*/sbin/rabbitmq-plugins enable rabbitmq_management
+
     The following plugins have been enabled:
       mochiweb
       webmachine
