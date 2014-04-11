@@ -38,4 +38,3 @@ Demos with python
 
     The HTTP API and its documentation are both located
         http://IP.IP.IP.IP:55672/api/ or other port
-
